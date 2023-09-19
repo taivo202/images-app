@@ -8,34 +8,36 @@ import ImageSkeleton from "../components/ImageSkeleton/ImageSkeleton";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useParams } from "react-router-dom";
 
-const Monochromatic = (props) => {
+
+
+
+const Search= (props) => {
+
   const { name } = useParams();
   const [data, setData] = useState([]);
   const [hasMore, setHasMore] = useState(true);
+  const api = LINK_API + '/search/photos' + '?client_id=' + PUBLIC_KEY + '&query=' + name;
 
-  const api = LINK_API + '/topics/'+'monochromatic'+'/photos'+'?client_id=' + PUBLIC_KEY;;
+ 
+
 
 
   const fetchMoreData = () => {
     
-    // calling api here
-    // setTimeout(() => {
-    //   setData([...data, ...images]);
-    // }, 1000);
     fetch(api, {
       method: "GET",
     })
-      .then(resp => resp.json()).then(resp => { setData([...data, ...resp]); console.log(2) }).then(error => console.log(error));
+      .then(resp => resp.json()).then(resp => { setData([...data, ...resp.results]); console.log(2) }).then(error => console.log(error));
   };
   useEffect(() => {
 
     fetch(api, {
       method: "GET",
     })
-      .then(resp => resp.json()).then(resp => { setData(resp); console.log(11) }).then(error => console.log(11));
+      .then(resp => resp.json()).then(resp => { setData(resp.results);  }).then(error => console.log(error));
 
 
-  }, []);
+  }, [data]);
   return (
     <>
       <Header />
@@ -61,4 +63,4 @@ const Monochromatic = (props) => {
   );
 };
 
-export default Monochromatic;
+export default Search;

@@ -8,12 +8,12 @@ import ImageSkeleton from "../components/ImageSkeleton/ImageSkeleton";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useParams } from "react-router-dom";
 
-const Monochromatic = (props) => {
+const Animals = (props) => {
   const { name } = useParams();
   const [data, setData] = useState([]);
   const [hasMore, setHasMore] = useState(true);
 
-  const api = LINK_API + '/topics/'+'monochromatic'+'/photos'+'?client_id=' + PUBLIC_KEY;;
+  const api = LINK_API + '/topics/'+'animals'+'/photos'+'?client_id=' + PUBLIC_KEY;;
 
 
   const fetchMoreData = () => {
@@ -61,4 +61,4 @@ const Monochromatic = (props) => {
   );
 };
 
-export default Monochromatic;
+export default Animals;
