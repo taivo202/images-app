@@ -1,6 +1,6 @@
 # Devsamurai
 
-#Installation
+# Installation
 ```shell
 [git clone https://github.com/taivo2022/webdev-intern-assignment.git](https://github.com/taivo202/images-app.git)
 cd images-app
