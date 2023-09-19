@@ -8,5 +8,5 @@ npm i
 npm start 
 ```
 ### Note:
-If have a conflick error about webpack, please delete the webpack versions to avoid conflicts.
-
+1.  If have a conflick error about webpack, please delete the webpack versions to avoid conflicts.
+2.  Because the API has a limit on requests, don't spam to avoid the rate limit.
