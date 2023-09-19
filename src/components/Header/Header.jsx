@@ -1,8 +1,5 @@
 import "./Header.css"
-import {
-    Button
-} from "react-bootstrap";
-import { useRef, useEffect, useState } from "react";
+import {useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -72,9 +69,8 @@ const Header = () => {
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
             const stringWithDashes = event.target.value.replace(/\s+/g, "-");
-            navigate("/s/" + stringWithDashes);
-            // navigate(0)
-            return 1;
+            
+            return navigate("/s/" + stringWithDashes);
         }   
       }
     return (

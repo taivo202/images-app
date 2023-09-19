@@ -1,6 +1,6 @@
 import "../components/Header/Header"
 import Header from "../components/Header/Header";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { LINK_API, PUBLIC_KEY, GET_RANDOM } from "../config";
 import Image from "../components/Image/Image";
 import "../global/global.css";
@@ -17,28 +17,12 @@ const Home = (props) => {
   const [data, setData] = useState([]);
   const [hasMore, setHasMore] = useState(true);
   const api = LINK_API + '/' + GET_RANDOM + '?client_id=' + PUBLIC_KEY + '&count=12';
-  // if(name !== undefined){
-  //   api = LINK_API + '/search/photos' + '?client_id=' + PUBLIC_KEY + '&query=' + name;
-  //   console.log(api);
-  // }
-  // else{
-  //   if(props.namepage === 'home'){
-  //     api = LINK_API + '/' + GET_RANDOM + '?client_id=' + PUBLIC_KEY + '&count=12';
-  //   }
-  //   else 
-  //   {
-  //     api = LINK_API + '/topics/'+props.namepage+'/photos'+'?client_id=' + PUBLIC_KEY;
-  //   }
-  // }
+
 
 
 
   const fetchMoreData = () => {
     
-    // calling api here
-    // setTimeout(() => {
-    //   setData([...data, ...images]);
-    // }, 1000);
     fetch(api, {
       method: "GET",
     })

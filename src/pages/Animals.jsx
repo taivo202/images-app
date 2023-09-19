@@ -1,7 +1,7 @@
 import "../components/Header/Header"
 import Header from "../components/Header/Header";
-import React, { useState, useEffect, useRef } from "react";
-import { LINK_API, PUBLIC_KEY, GET_RANDOM } from "../config";
+import React, { useState, useEffect} from "react";
+import { LINK_API, PUBLIC_KEY } from "../config";
 import Image from "../components/Image/Image";
 import "../global/global.css";
 import ImageSkeleton from "../components/ImageSkeleton/ImageSkeleton";
@@ -18,10 +18,6 @@ const Animals = (props) => {
 
   const fetchMoreData = () => {
     
-    // calling api here
-    // setTimeout(() => {
-    //   setData([...data, ...images]);
-    // }, 1000);
     fetch(api, {
       method: "GET",
     })
