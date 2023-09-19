@@ -18,5 +18,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 #### Fetures
 1. Search
 2. Skeleton loading & lazy loading
-3. Dowload image
+3. Download image
    
